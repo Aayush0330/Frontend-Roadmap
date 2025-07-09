@@ -1,0 +1,1 @@
+# Day 1 10 Jul 2025 Variables + My Info Card App
