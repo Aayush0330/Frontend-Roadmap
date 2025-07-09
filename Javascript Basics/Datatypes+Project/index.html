@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Type Checker App</title>
+    <style>
+      body {
+        background-color: #525252;
+        color: #ffffff;
+        justify-self: center;
+        text-transform: uppercase;
+        font-size: 25px;
+        font-weight: 700;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana;
+      }
+
+      input {
+        padding: 10px;
+        font-size: 16px;
+      }
+
+      button {
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      #type {
+        margin-top: 30px;
+        font-size: 24px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Type Checker App</h1>
+    <input type="text" name="text" id="text" placeholder="Enter Something" />
+    <button onclick="checkType()">Check Type</button>
+    <div id="type"></div>
+    <script>
+
+        function checkType(){
+            const input = document.getElementById('text').value
+
+            let type;
+
+            if (input === "") {
+                type = "Empty String"
+            } else if(input === 'true' || input === 'false') {
+                type = "Empty Boolean"
+            } else if(!isNaN(Number(input))){
+                type = "Number"
+            } else{
+                type = "String"
+            }
+            document.getElementById("type").textContent = `You Entered ${type}`;
+        }
+    </script>
+  </body>
+</html>
+
+<!-- 💻 Mini Project: Type Checker App
+
+🧾 Goal:
+
+    User input lega
+    Uska type detect karega
+    Show karega: "You entered a number" ya "You entered a string", etc. -->

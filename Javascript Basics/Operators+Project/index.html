@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #525252;
+        color: #ffffff;
+        justify-self: center;
+        text-transform: uppercase;
+        font-size: 25px;
+        font-weight: 700;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Age Verifier App</h1>
+    <input type="text" name="text" id="text" placeholder="Enter Your Age" />
+    <button onclick="checkAge()">Check Age</button>
+    <div id="type"></div>
+    <script>
+      function checkAge() {
+        let age = Number(document.getElementById("text").value);
+        let type;
+
+        if (age < 13) {
+          type = "You are a child";
+        } else if (age >= 13 && age <= 19) {
+          type = "You are a teenager";
+        } else if (age >= 20 && age <= 59) {
+          type = "You are an adult";
+        } else if (age >= 60) {
+          type = "You are a senior citizen";
+        } else {
+          type = "Please enter a valid age";
+        }
+
+        document.getElementById("type").textContent = `${type}`;
+      }
+    </script>
+  </body>
+</html>
+
+<!-- 
+💻 Mini Project (Day 3): Age Verifier App
+🎯 Goal:
+User se age leke check karo:
+
+Age < 13 → "You are a child"
+
+13-19 → "You are a teenager"
+
+20-59 → "You are an adult"
+
+60+ → "You are a senior citizen"
+
+🧩 Structure:
+Input field (age)
+
+Button (Check Age)
+
+Output text -->
