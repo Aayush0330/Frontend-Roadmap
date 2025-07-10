@@ -18,49 +18,42 @@
     </style>
   </head>
   <body>
-    <h1>Age Verifier App</h1>
-    <input type="text" name="text" id="text" placeholder="Enter Your Age" />
-    <button onclick="checkAge()">Check Age</button>
-    <div id="type"></div>
+    <h1>Game Score Counter</h1>
+
+    <p>Player 1 Score: <span id="p1Score">0</span></p>
+    <p>Player 2 Score: <span id="p2Score">0</span></p>
+
+    <button id="p1Btn">+1 Player 1</button>
+    <button id="p2Btn">+1 Player 2</button>
+
+    <script src="script.js"></script>
     <script>
-      function checkAge() {
-        let age = Number(document.getElementById("text").value);
-        let type;
 
-        if (age < 13) {
-          type = "You are a child";
-        } else if (age >= 13 && age <= 19) {
-          type = "You are a teenager";
-        } else if (age >= 20 && age <= 59) {
-          type = "You are an adult";
-        } else if (age >= 60) {
-          type = "You are a senior citizen";
-        } else {
-          type = "Please enter a valid age";
-        }
+      let p1Score = 0
+      let p2Score = 0
+      const p1Btn = document.getElementById("p1Btn");
+      const p2Btn = document.getElementById("p2Btn");
 
-        document.getElementById("type").textContent = `${type}`;
-      }
+      const p1Display = document.getElementById("p1Score");
+      const p2Display = document.getElementById("p2Score");
+
+      p1Btn.addEventListener('click' , () => {
+        p1Score++
+        p1Display.textContent = p1Score
+      })
+
+      p2Btn.addEventListener('click' , () => {
+        p2Score++
+        p2Display.textContent = p2Score
+      })
     </script>
   </body>
 </html>
 
-<!-- 
-💻 Mini Project (Day 3): Age Verifier App
-🎯 Goal:
-User se age leke check karo:
+<!-- Two players (Player 1 and Player 2)
 
-Age < 13 → "You are a child"
+Buttons to increase each player's score
 
-13-19 → "You are a teenager"
+A reset button
 
-20-59 → "You are an adult"
-
-60+ → "You are a senior citizen"
-
-🧩 Structure:
-Input field (age)
-
-Button (Check Age)
-
-Output text -->
+First player to reach the winning score wins -->

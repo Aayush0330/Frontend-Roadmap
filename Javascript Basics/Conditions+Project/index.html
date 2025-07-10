@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" name="text" id="text" placeholder="Enter Your Marks" />
+    <button onclick="checkGrades()">Check Grades</button>
+    <p id="result"></p>
+
+    <script>
+      function checkGrades() {
+        const grades = Number(document.getElementById("text").value);
+
+        let result;
+
+        switch (true) {
+          case grades >= 90 && grades <= 100:
+            result = "A+";
+            break;
+          case grades >= 80 && grades <= 89:
+            result = "A";
+            break;
+          case grades >= 70 && grades <= 79:
+            result = "B";
+            break;
+          case grades >= 60 && grades <= 69:
+            result = "C";
+            break;
+
+          default:
+            result = "Below 60 Fail";
+        }
+        document.getElementById("result").textContent = `You Got ${result}`;
+      }
+    </script>
+  </body>
+</html>
